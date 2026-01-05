@@ -78,12 +78,20 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             {filteredSkills.map((skill, index) => (
               <span
                 key={index}
-                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300"
+                className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm transition-all duration-200 ${
+                  searchTerm
+                    ? "font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-200 ring-2 ring-amber-500/20"
+                    : "font-medium bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300"
+                }`}
               >
                 {skill}
                 <button
                   onClick={() => removeSkill(skill)}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-100 transition-colors"
+                  className={`transition-colors ${
+                    searchTerm
+                      ? "hover:text-amber-600 dark:hover:text-amber-100"
+                      : "hover:text-indigo-600 dark:hover:text-indigo-100"
+                  }`}
                   aria-label={`Remove ${skill}`}
                 >
                   <X className="w-3 h-3" />
