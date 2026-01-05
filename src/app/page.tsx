@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center  p-8 gap-8">
-      <h1 className="text-3xl font-bold text-zinc-900">Team Member</h1>
+      <h1 className="text-3xl font-bold text-zinc-900">My Team Portfolio</h1>
       <ProfileCard name={name} role="Fullstack Developer" bio={bio} />
     </div>
   );
