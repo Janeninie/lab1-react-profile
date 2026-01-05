@@ -6,11 +6,12 @@ export default function ProfileClient() {
   const [data, setData] = React.useState<any | null>(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
+  const GITHUB_USERNAME = "Janeninie";
 
   React.useEffect(() => {
     let mounted = true;
     setLoading(true);
-    fetch("https://api.github.com/users/Janeninie")
+    fetch(`https://api.github.com/users/${GITHUB_USERNAME}`)
       .then((res) => {
         if (!res.ok) throw new Error(res.statusText || "Failed to fetch");
         return res.json();
